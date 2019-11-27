@@ -8,7 +8,6 @@ class AppLayout extends React.Component{
           <meta charSet="UTF-8" />
           <meta name="viewport" content="width=device-width" />
           <title>{this.props.title}</title>
-          <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"></link>
           <link  href="/css/normalize.css" rel="stylesheet"/>
           <link href="/css/bootstrap.css" rel="preload" as="style" />
           <link href="/css/bootstrap.css" rel="stylesheet" /> 
@@ -16,7 +15,7 @@ class AppLayout extends React.Component{
         <body>
           <header className="pt-5">
             <h1 className=" display-1 text-center text-info">{this.props.title}</h1>
-            <ul className="nav nav-tabs">
+            <ul className="nav nav-tabs mx-2">
                 <li className="nav-item-info">
                     <a className="nav-link" data-toggle="tab" href="/">Home</a>
                 </li>
