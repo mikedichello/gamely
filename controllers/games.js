@@ -1,15 +1,22 @@
 const express = require('express');
 const router = express.Router();
+const data = require('../db/seeds.json');
 
 const Games = require('../models/Games.js');
 
 //Index Route
 router.get('/', (req, res) => {
-    Games.find({}).sort({name: 1}).then(games => {
-      res.render('games/Index', { games });
-    });
+  Games.find({}).sort({name: 1}).then(games => {
+    res.render('games/Index', { games });
   });
+});
 
+//seed route
+router.get('/seed', (req, res) =>{
+  Games.collection.insertMany(data, (err, data) => {
+      res.redirect('/');
+  });;
+});
 
 //if Games.length > 12 next page
 
@@ -76,5 +83,6 @@ router.delete('/:id', (req, res) => {
       res.redirect('/games');
     });
   });
-  
+
+
 module.exports = router;
