@@ -28,7 +28,7 @@ Each card element contains links to the full show page, an edit link, and the op
 * Connect to the [Board Game Geek](www.boardgamegeek.com) API to allow searching and adding of game data to user's library
 
 ## Deployment
-[Game.ly](game-ly.herokuapp.com)
+[Game.ly](https://game-ly.herokuapp.com/)
 
 ## View Repository
 [Github.com](#)
