@@ -5,44 +5,48 @@ class Edit extends React.Component{
   render() {
     return (
       <AppLayout title="Edit Page">
-        <h1>EDIT GAME</h1>
-      <form action={`/games/${this.props._id}?_method=put`} method="post">
-        <p>
-          <label>Name:</label>
-          <input type="text" value={this.props.name} name="name"/>
-        </p>
-        <p>
-          <label>Description:</label>
-          <input type="textarea" value={this.props.description} name="description"/>
-        </p>
-        <p>
-          <label>Image Link:</label>
-          <input type="text" value={this.props.img} name="img"/>
-        </p>
-        <p>
-          <label>Minimum Players:</label>
-          <input type="number" value={this.props.minPLayers} name="minPlayers"/>
-        </p>
-        <p>
-          <label>Maximum Players:</label>
-          <input type="number" value={this.props.maxPlayers} name="maxPlayers"/>
-        </p>
-        <div class="form-group">
-            <label for="complexity">Weight (Complexity):</label>
-            <select class="form-control" value={this.props.weight} name="complexity" id="complexity">
-                <option>Light</option>
-                <option>Medium</option>
-                <option>Heavy</option>
-            </select>
+        <div className="container">
+            <div className="jumbotron border-info my-5 text-center alignt-content-center">
+              <h1 className="text-warning">EDIT GAME</h1>
+              <form action={`/games/${this.props._id}?_method=put`} method="post">
+              <p>
+                <label className="mr-4">Name:</label>
+                <input type="text" value={this.props.name} name="name"/>
+              </p>
+              <p>
+                <label className="mr-4">Description:</label>
+                <input className="textarea" type="textarea" value={this.props.description} name="description"/>
+              </p>
+              <p>
+                <label className="mr-4">Image Link:</label>
+                <input type="text" value={this.props.img} name="img"/>
+              </p>
+              <p>
+                <label className="mr-4">Minimum Players:</label>
+                <input type="number" value={this.props.minPLayers} name="minPlayers"/>
+              </p>
+              <p>
+                <label className="mr-4">Maximum Players:</label>
+                <input type="number" value={this.props.maxPlayers} name="maxPlayers"/>
+              </p>
+              <div class="form-group">
+                  <label className="mr-4" for="complexity">Weight (Complexity):</label>
+                  <select class="form-control col-sm-4 mx-auto" value={this.props.weight} name="complexity" id="complexity">
+                      <option>Light</option>
+                      <option>Medium</option>
+                      <option>Heavy</option>
+                  </select>
+              </div>
+              <p>
+                <label className="mr-4">Game Length:</label>
+                <input type="number" value={this.props.lengthOfGame} name="lengthOfGame"/>
+              </p>
+              <p>
+                <input className="btn btn-lg btn-info" type="submit" value="Submit"/>
+              </p>
+              </form>
+          </div>
         </div>
-        <p>
-          <label>Game Length:</label>
-          <input type="number" value={this.props.lengthOfGame} name="lengthOfGame"/>
-        </p>
-        <p>
-          <input type="submit" value="Submit"/>
-        </p>
-      </form>
       </AppLayout>
     )
   }
