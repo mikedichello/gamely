@@ -10,7 +10,7 @@ class Index extends React.Component{
           (game, index) => {
               return (
                 <div className="col-sm-3" style={{maxHeight: 700 + 'px'}}>
-                    <div className="card border-info bg-info h-100" >
+                    <div className="card border-info bg-info h-100 m-5" >
                         <div className="card-header">
                             <a className="h2" className="text-light" href={`games/${game._id}`}>{game.name}</a>
                         </div>
