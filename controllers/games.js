@@ -20,17 +20,19 @@ router.get('/seed', (req, res) =>{
 
 //if Games.length > 12 next page
 
-// //Selector Route
-// router.get('/selector/:numOfPlayers/:lengthOfGame/:desiredComplexity', (req, res) => {
-//     Games.find({
-//         minPlayers: {$lte: `${req.params.numOfPlayers}`},
-//         maxPlayers: {$gte: `${req.params.numOfPlayers}`},
-//         lengthOfGame: {$lte: `${req.params.lengthOfGame}`},
-//         complexity:  `${req.params.desiredComplexity}`}).sort({name: 1}).then(games => {
-//             // res.render('games/Selector', { games });
-//             console.log(games);
-//         });
-// });
+//Selector Route
+router.get('/selector/:numOfPlayers/:lengthOfGame/:desiredComplexity', (req, res) => {
+    Games.find({
+        minPlayers: {$lte: `${req.params.numOfPlayers}`},
+        maxPlayers: {$gte: `${req.params.numOfPlayers}`},
+        lengthOfGame: {$lte: `${req.params.lengthOfGame}`},
+        complexity:  `${req.params.desiredComplexity}`}).sort({name: 1}).then(games => {
+            // res.render('games/Selector', { games });
+            console.log(games);
+        });
+});
+
+
 //Selector Route
 router.get('/selector/:numOfPlayers', (req, res) => {
     console.log(req.params.numOfPlayers)
